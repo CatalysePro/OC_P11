@@ -26,14 +26,15 @@ const SignIn = ({ onSignIn }) => {
         }
       });
 
-      const { firstName } = profileResponse.data.body;
+      const { firstName, lastName } = profileResponse.data.body;
 
       console.log("First name:", firstName);
+      console.log("Last name:", lastName);
 
       onSignIn(firstName);
 
       navigate('/User', {
-        state: { firstName }
+        state: { firstName, lastName }
       });
       
       setEmail('');
