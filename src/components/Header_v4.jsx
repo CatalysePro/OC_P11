@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../pictures/logos/argentBankLogo.png'; 
 import '../style/Header.css';
 
-function Header({ isLoggedIn, handleSignOut, firstName }) { // props as parameters managed by SignIn.jsx
+function Header({ isLoggedIn, handleSignOut }) { // props as parameters managed by SignIn.jsx
   return (
     <nav className="main-nav">
       <NavLink className="main-nav-logo" to="/">
@@ -19,7 +19,6 @@ function Header({ isLoggedIn, handleSignOut, firstName }) { // props as paramete
             onClick={handleSignOut} // disconnexion function insert
           > 
             <i className="fa fa-user-circle"></i> 
-            {firstName} {/* Display first name */}
             <i className="fa fa-sign-out"></i>
             Sign Out
           </NavLink>
