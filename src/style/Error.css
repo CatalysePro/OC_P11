@@ -1,0 +1,96 @@
+
+.error_block {
+
+    height: auto;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center vertically*/
+
+    align-items: center; /* center horizontally*/
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.error_title {
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 288px;
+    font-weight: 700;
+    color: #FF6060;
+
+}
+
+
+.error_msg {
+
+    text-align: center;
+    padding: 20px 0 20px 0;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #FF6060;
+
+}
+
+
+.link_to_homepage {
+
+    padding: 20px 0 40px 0;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+
+
+}
+
+/** START MEDIA QUERIES PHONE */
+
+@media only screen and (max-width: 767px) {
+
+    .error_title {
+        font-size: 96px;
+    }
+
+    .error_msg {
+        font-size: 18px;
+    }
+
+    .link_to_homepage {
+        font-size: 14px;
+    }
+    
+    
+  }
+  
+  /** END MEDIA QUERIES PHONE */
+  
+  /*? START MEDIA QUERIES TABLET */
+  
+  @media only screen and (min-width: 768px) and (max-width: 1440px) {
+
+    .error_title {
+        font-size: 200px;
+    }
+
+    .error_msg {
+        font-size: 28px;
+    }
+
+    .link_to_homepage {
+        font-size: 22px;
+    }
+    
+    
+  }
+  
+  /*? END MEDIA QUERIES TABLET */

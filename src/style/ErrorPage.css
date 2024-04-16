@@ -1,0 +1,22 @@
+
+.error_page {
+
+    box-sizing: border-box;
+  
+    width: 100%;
+  
+    height: 100vh; 
+    /* vs 100 vh for full height fullfilment*/
+
+  
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    /* background-color: lightgoldenrodyellow;
+    border: 0.5px solid red; */
+
+}

@@ -1,0 +1,22 @@
+
+html {
+
+    height: 100 vh;
+}
+
+.bg-dark {
+
+    height: 100%;
+
+    padding-top: 20px !important;
+    padding-bottom: 100px !important;
+
+
+    background-color: #12002b;
+
+    /*additionnal style*/
+    /* margin-top: 20px;
+    margin-bottom: 50px; */
+
+
+}
