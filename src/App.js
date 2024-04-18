@@ -7,21 +7,21 @@ import Header from './components/Header';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [firstName, setFirstName] = useState('');
+  const [userName, setuserName] = useState('');
 
-  const handleSignIn = (firstName) => {
+  const handleSignIn = (userName) => {
     setIsLoggedIn(true);
-    setFirstName(firstName);
+    setuserName(userName);
   };
 
   const handleSignOut = () => {
     setIsLoggedIn(false);
-    setFirstName('');
+    setuserName('');
   };
 
   return (
     <Router>
-      <Header isLoggedIn={isLoggedIn} handleSignOut={handleSignOut} firstName={firstName} />
+      <Header isLoggedIn={isLoggedIn} handleSignOut={handleSignOut} userName={userName} />
       
       <Routes>
         <Route path="/" element={<HomePage />} />

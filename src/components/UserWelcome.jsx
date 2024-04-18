@@ -11,7 +11,10 @@ const UserWelcome = () => {
     <div className="header">
       {/*check data existence before displaying */}
       {firstName && lastName && (
-        <h1>Welcome, {firstName} {lastName}!</h1>
+        <h1>
+        Welcome back <br />
+        {firstName} {lastName} !
+        </h1>
       )}
       <button className="edit-button">Edit Name</button>
     </div>
