@@ -7,26 +7,29 @@ import Header from './components/Header';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [firstName, setFirstName] = useState('');
+  const [userName, setUserName] = useState('');
+  const [token, setToken] = useState('');
 
-  const handleSignIn = (firstName) => {
+  const handleSignIn = (userName, token) => {
     setIsLoggedIn(true);
-    setFirstName(firstName);
+    setUserName(userName);
+    setToken(token);
   };
 
   const handleSignOut = () => {
     setIsLoggedIn(false);
-    setFirstName('');
+    setUserName('');
+    setToken('');
   };
 
   return (
     <Router>
-      <Header isLoggedIn={isLoggedIn} handleSignOut={handleSignOut} firstName={firstName} />
+      <Header isLoggedIn={isLoggedIn} handleSignOut={handleSignOut} userName={userName} />
       
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Sign-in" element={<SignInPage onSignIn={handleSignIn} />} /> 
-        <Route path="/User" element={<UserPage />} />
+        <Route path="/User" element={<UserPage token={token} />} /> {/* Pass the token as prop */}
       </Routes>
     </Router>
   );

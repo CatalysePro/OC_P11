@@ -3,50 +3,70 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style/SignIn.css';
 
-const SignIn = () => {
+const SignIn = ({ onSignIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+  
     try {
       console.log("Submitting form...");
       const response = await axios.post('http://localhost:3001/api/v1/user/login', {
         email: email, 
         password: password
       });
-
+  
       console.log("Login response:", response.data);
+  
+      const token = response.data.body.token;
 
-      // Call the appropriate API url to retrieve user profile
-      const profileResponse = await axios.put('http://localhost:3001/api/v1/user/profile', null, {
+      console.log(token)
+  
+      const userNameResponse = await fetch('http://localhost:3001/api/v1/user/profile', {
+        method: 'POST',
         headers: {
-          Authorization: `Bearer ${response.data.body.token}` // Include the token in the Authorization header
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        
+        body: JSON.stringify({ includeUserName: true }) // ask for userName in the response body
+
+        // credentials: 'include' // Ask to include credentials in the request -- generate CORS issues
+      });
+  
+      const userNameData = await userNameResponse.json();
+      console.log("User name data:", userNameData);
+      const { userName } = userNameData.body;
+  
+      console.log("User name:", userName);
+  
+      // Axios request for first name and last name
+      const profileResponse = await axios.post('http://localhost:3001/api/v1/user/profile', null, {
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       });
-
-      console.log("Profile response:", profileResponse.data);
-
-      // Extract name and surname from user profile
       const { firstName, lastName } = profileResponse.data.body;
-
       console.log("First name:", firstName);
       console.log("Last name:", lastName);
-
-      // Redirect to welcome page by passing first and last name as URL parameters
-      navigate(`/welcome?firstName=${firstName || ''}&lastName=${lastName || ''}`);
-      
-      // Reset email and password fields after successful submission
+  
+      onSignIn(userName);
+  
+      navigate('/User', {
+        state: { firstName, lastName, userName }
+      });
+  
       setEmail('');
       setPassword('');
-    } 
-    catch (error) {
+    } catch (error) {
       console.error('Error:', error);
-      // Manage errors here with error message
     }
   };
+  
+  
 
   return (
     <section className="sign-in-content">
