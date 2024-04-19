@@ -10,16 +10,16 @@ function Header({ isLoggedIn, handleSignOut, userName }) {
         <img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo"/>
         <h1 className="sr-only">Argent Bank</h1>
       </NavLink>
-      <div>
+      <div className="header_user_info_bloc">
         {isLoggedIn ? (
           <>
-            <NavLink 
-              className="main-nav-item"
-              to="/Sign-in" // homepage or other by default plan to redirect to /Profil
+            <div 
+              className=""
+              // to="/Sign-in" // homepage or other by default plan to redirect to /Profil
             > 
               <i className="fa fa-user-circle"></i> 
               <span className="headerNameClass">{userName}</span> {/* Display userName next to icon */}
-            </NavLink>
+            </div>
 
             <a
               className="main-nav-item"
