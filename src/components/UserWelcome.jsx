@@ -27,7 +27,6 @@ const UserWelcome = () => {
         Welcome back <br />
         {firstName} {lastName} !
         </h1>
-<<<<<<< HEAD
       )}
       <button className="edit-button" onClick={openModal}>Edit Name</button>
       {isModalOpen && (
@@ -37,8 +36,6 @@ const UserWelcome = () => {
           userName={userName}
           onClose={closeModal}
         />
-=======
->>>>>>> e73b4725a810e0fa1577b1877b5a09002d91fcb6
       )}
     </div>
     
