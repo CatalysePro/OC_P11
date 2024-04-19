@@ -7,7 +7,6 @@ import Header from './components/Header';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-<<<<<<<< HEAD:src/App_v5.js
   const [userName, setUserName] = useState('');
   const [token, setToken] = useState('');
 
@@ -15,23 +14,12 @@ function App() {
     setIsLoggedIn(true);
     setUserName(userName);
     setToken(token);
-========
-  const [userName, setuserName] = useState('');
-
-  const handleSignIn = (userName) => {
-    setIsLoggedIn(true);
-    setuserName(userName);
->>>>>>>> e73b4725a810e0fa1577b1877b5a09002d91fcb6:src/App_v4.js
   };
 
   const handleSignOut = () => {
     setIsLoggedIn(false);
-<<<<<<<< HEAD:src/App_v5.js
     setUserName('');
     setToken('');
-========
-    setuserName('');
->>>>>>>> e73b4725a810e0fa1577b1877b5a09002d91fcb6:src/App_v4.js
   };
 
   return (
