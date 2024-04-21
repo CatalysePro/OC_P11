@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'; // Import useDispatch from react-redux
+
 import axios from 'axios';
 import '../style/SignIn.css';
 
 const SignIn = ({ onSignIn }) => {
+  const dispatch = useDispatch(); // Initialize useDispatch
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -42,6 +45,13 @@ const SignIn = ({ onSignIn }) => {
       const { userName } = userNameData.body;
   
       console.log("User name:", userName);
+
+      // Dispatch  LOGIN_SUCCESS action with retrievd User name and token
+      // dispatch({ type: 'LOGIN_SUCCESS', payload: { username: userName} });
+
+      // Dispatch  LOGIN_SUCCESS action with retrieved User name and token
+      dispatch({ type: 'LOGIN_SUCCESS', payload: { username: userName, token: token } });
+      console.log('Token stored in Redux store:', token);
   
       // Axios request for first name and last name
       const profileResponse = await axios.post('http://localhost:3001/api/v1/user/profile', null, {
@@ -56,7 +66,7 @@ const SignIn = ({ onSignIn }) => {
       onSignIn(userName);
   
       navigate('/User', {
-        state: { firstName, lastName, userName }
+        state: { firstName, lastName, userName, token }
       });
   
       setEmail('');

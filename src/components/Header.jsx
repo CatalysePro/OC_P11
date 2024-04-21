@@ -1,9 +1,13 @@
+// Header.jsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import logo from '../pictures/logos/argentBankLogo.png'; 
 import '../style/Header.css';
 
-function Header({ isLoggedIn, handleSignOut, userName }) {
+function Header({ isLoggedIn, handleSignOut }) {
+  const userName = useSelector(state => state.auth.username); //  username instaed of userName / useSelector for extracting from Redux store
+
   return (
     <nav className="main-nav">
       <NavLink className="main-nav-logo" to="/">
@@ -13,24 +17,21 @@ function Header({ isLoggedIn, handleSignOut, userName }) {
       <div className="header_user_info_bloc">
         {isLoggedIn ? (
           <>
-            <div 
-              className=""
-              // to="/Sign-in" // homepage or other by default plan to redirect to /Profil
-            > 
+            <div> 
               <i className="fa fa-user-circle"></i> 
-              <span className="headerNameClass">{userName}</span> {/* Display userName next to icon */}
+              <span className="headerNameClass">{userName}</span>
             </div>
 
             <a
               className="main-nav-item"
-              href="/" // link directing to homepage
-              onClick={handleSignOut} // disconnexion function insert
+              href="/"
+              onClick={handleSignOut}
             > 
               <i className="fa fa-sign-out"></i>
               Sign Out
             </a>
           </>
-        ) : ( // if not looged in show elements by default
+        ) : (
           <NavLink 
             className="main-nav-item"
             to="/Sign-in"
