@@ -25,9 +25,9 @@ const EditUsernameModal = ({ firstName, lastName, userName, token, onClose}) => 
         <span className="close" onClick={onClose}>×</span>
         <h2>User Details</h2>
         <div className="user-details">
-          <div className="id-data-group"><label>First Name:</label> <span>{firstName}</span></div>
-          <div className="id-data-group"><label>Last Name:</label> <span>{lastName}</span></div>
-          <div className="id-data-group"><label>User Name:</label>
+          <div className="id-data-group first_name_bloc"><label>First Name:</label> <span>{firstName}</span></div>
+          <div className="id-data-group last_name_bloc"><label>Last Name:</label> <span>{lastName}</span></div>
+          <div className="id-data-group user_name_bloc"><label>User Name:</label>
             {isEditMode ? (
               <UpdateUsernameForm
               userName={userNameRedux} // extract value from Redux store
@@ -39,11 +39,12 @@ const EditUsernameModal = ({ firstName, lastName, userName, token, onClose}) => 
             ) : (
               <span>{userNameRedux}</span> // extract value from Redux store
             )}
+            {!isEditMode && (
+            <button className="modify-button" onClick={handleModify}>Modify</button>
+            )}
           </div>
         </div>
-        {!isEditMode && (
-          <button className="modify-button" onClick={handleModify}>Modify</button>
-        )}
+          
       </div>
     </div>
   );

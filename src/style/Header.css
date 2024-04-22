@@ -66,6 +66,14 @@
   flex-direction: row;
 }
 
+.headerNameClass {
+
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+
+}
+
 .header_user_info_bloc .headerNameClass:hover {
   pointer-events: none !important;
   text-decoration: none !important;
