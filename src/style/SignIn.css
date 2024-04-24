@@ -48,3 +48,45 @@
     padding: 5px;
     font-size: 1.2rem;
   }
+
+  
+
+  /* additionnal style */
+
+  .error-popup {
+
+    width: auto;
+    z-index: 999; /* insure the superposition */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .error-message {
+    color: #ff0000;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .error-popup button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .error-popup button:hover {
+    background-color: #0056b3;
+  }
+  
+  

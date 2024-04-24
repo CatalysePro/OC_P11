@@ -10,6 +10,11 @@ const SignIn = ({ onSignIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [showError, setShowError] = useState(false);
+
+  const handleCloseError = () => {
+    setShowError(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,11 +73,18 @@ const SignIn = ({ onSignIn }) => {
       navigate('/User', {
         state: { firstName, lastName, userName, token }
       });
+
+      // navigate('/transactions', {
+      //   state: { firstName, lastName, userName, token }
+      // }); DOES NOT WORK
+
+      
   
       setEmail('');
       setPassword('');
     } catch (error) {
       console.error('Error:', error);
+      setShowError(true);
     }
   };
   
@@ -91,9 +103,20 @@ const SignIn = ({ onSignIn }) => {
           <label htmlFor="password">Password</label>
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
+
+        <div class="input-remember">
+            <input type="checkbox" id="remember-me" /><label for="remember-me">Remember me</label>
+        </div>
         
         <button className="sign-in-button" type="submit">Sign In</button>
+        
       </form>
+      {showError && (
+        <div className="error-popup">
+          <p className="error-message">Connexion error ! <br />Please check your email and/or password.</p>
+          <button onClick={handleCloseError}>OK</button>
+        </div>
+      )}
     </section>
   );
 };

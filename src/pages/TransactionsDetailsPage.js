@@ -1,41 +1,40 @@
-// TransactionsDetailsPage
+import React from 'react';
 
-// import React from 'react';
-// import Header from '../components/Header';
-// import Footer from '../components/Footer';
-// import ResumeRecall from '../components/ResumeRecall';
-// import TransactionsDetail from '../components/TransactionsDetail';
-// import { useLocation } from 'react-router-dom';
+import Footer from '../components/Footer';
+import ResumeRecall from '../components/ResumeRecall';
+import AccountOwner from '../components/AccountOwner';
+import TransactionsList from '../components/TransactionsList';
+import { useLocation } from 'react-router-dom';
 
-// const TransactionsDetailsPage = ({ token }) => { // add token as prop
+import '../style/TransactionsDetailsPage.css';
 
-//     const location = useLocation();
-//     const { state } = location;
-//     const { firstName, lastName } = state || {}; // State data Destructuring
-//     const { title, accountNumber, amount, description } = state || {}; // State data Destructuring
 
-//     console.log('token presence in Transactions Page:', token); //check if token is present
+const TransactionsDetailsPage = ({ token }) => {
+    const location = useLocation();
+    const { state } = location;
+    const { title, accountNumber, amount, description } = state || {};
+    const { firstName, lastName } = state || {};
 
-//     return (
-//       <>
-//         <div className="Account_Owner_names">
-//           {firstName && lastName && (
-//             <h1>{firstName} {lastName}<span>'s account</span></h1>
-//           )}
-//         </div>
-       
-//         <Header />
-//         <div className="transactions_bloc">
-//           <ResumeRecall 
-//           title={title} 
-//           accountNumber={accountNumber}
-//           amount={amount}
-//           description={description}  />
-//           <TransactionsDetail/>
-//         </div>
-//         <Footer />
-//       </>
-//     );
-// };
+    return (
+      <>
+        <button onClick={() => window.history.back()} className="back-button">Back to Accounts Overview</button>
+        <AccountOwner
+          firstName={firstName}
+          lastName={lastName}
+        />
+        <div className="transactions_bloc">
+          <ResumeRecall 
+            title={title} 
+            accountNumber={accountNumber}
+            amount={amount}
+            description={description}
+            token={token}  
+          />
+          <TransactionsList/>
+        </div>
+        <Footer />
+      </>
+    );
+};
 
-// export default TransactionsDetailsPage;
+export default TransactionsDetailsPage;
