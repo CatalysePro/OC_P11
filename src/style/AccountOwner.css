@@ -1,0 +1,27 @@
+
+  
+  .owner_name {
+
+    
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: left;
+
+    margin-left: 30px;
+
+    margin-bottom: 2rem;
+
+    /* background-color: yellow; */
+  }
+
+  span {
+
+    margin-right: 10px;
+  }
+
+  .first_name, .last_name {
+
+    color: #007bff; 
+  }
+  

@@ -1,0 +1,119 @@
+.transactions-list {
+    width: 90%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.transactions-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-list th,
+.transactions-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.transactions-list th {
+    background-color: #4CAF50;
+    color: #ddd;
+}
+
+.transactions-list tr:nth-child(even) {
+    background-color: #c4ecc6;
+}
+
+.transactions-list tr:hover {
+    background-color: #ddd;
+}
+.transactions-list {
+    width: 90%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.transactions-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-list th,
+.transactions-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.transactions-list th {
+    background-color: #4CAF50;
+    color: #ddd;
+}
+
+.transactions-list tr:nth-child(even) {
+    background-color: #c4ecc6;
+}
+
+.transactions-list tr:hover {
+    background-color: #ddd;
+}
+.transactions-list {
+    width: 90%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.transactions-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-list th,
+.transactions-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.transactions-list th {
+    background-color: #4CAF50;
+    color: #ddd;
+}
+
+.transactions-list tr:nth-child(even) {
+    background-color: #c4ecc6;
+}
+
+.transactions-list tr:hover {
+    background-color: #ddd;
+}
+
+.transactions-list input[type="text"] {
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+
+.purpose_bloc {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+
+.transactions-list .icon-pencil {
+    margin-left: 10px;
+
+    font-weight: bold;
+    color: blue; 
+    cursor: pointer;
+}
+
+.transactions-list .icon-pencil:hover {
+    color: #28692b; 
+}

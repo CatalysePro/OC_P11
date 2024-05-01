@@ -47,7 +47,7 @@ function UserPage() {
 
   }
     
-  }, [token, navigate]) // Use effect dependancies --> warning if not filled in
+  }, []) // Use effect dependancies --> warning if not filled in
   
 
   // Check if state is null before destructurering firstName & lastName

@@ -1,0 +1,22 @@
+
+
+h2 {
+
+  font-size: 20px;
+
+}
+
+
+.account-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+
+.current_balance {
+
+  font-size: 20px;
+}
+  
