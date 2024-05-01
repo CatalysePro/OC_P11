@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
-=======
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
->>>>>>> 348bb622512af94611051289ce35f6a5482c2a42
 import { useSelector } from 'react-redux'; // Import useSelector 
 import UserWelcome from '../components/UserWelcome';
 import CurrentAccResume from '../components/CurrentAccResume';
