@@ -14,6 +14,9 @@
 }
 
 .main-nav {
+
+  position: relative;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +73,7 @@
 
   font-size: 18px;
   font-weight: bold;
-  color: #007bff;
+  color: #28692b;
 
 }
 
@@ -78,4 +81,84 @@
   pointer-events: none !important;
   text-decoration: none !important;
   text-decoration-color: white !important;
+}
+
+/* log out pop up style */
+
+
+.custom-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* on top of every elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-popup {
+
+  width: 20%;
+
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-popup-content {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.custom-popup-buttons {
+
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+
+}
+
+.custom-popup-buttons button {
+
+  
+
+  margin: 10px;
+
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-popup button:first-child {
+  background-color: #12002b;
+  color: gray;
+}
+
+.custom-popup button:last-child {
+  background-color: rgb(120, 238, 120);
+  color: green;
+}
+
+.custom-popup button:first-child:hover {
+
+  background-color: #12002b;
+  color: #fff;
+
+}
+
+.custom-popup button:last-child:hover {
+
+  background-color: green;
+  color: #fff;
+
 }

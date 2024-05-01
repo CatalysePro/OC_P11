@@ -6,6 +6,8 @@ html {
 
 .bg-dark {
 
+    position: relative;
+
     height: 100%;
 
     padding-top: 20px !important;
@@ -20,3 +22,6 @@ html {
 
 
 }
+
+
+

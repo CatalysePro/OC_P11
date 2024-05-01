@@ -15,7 +15,7 @@
   
   .modal {
     width: auto;
-    background-color: lightblue;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
@@ -61,12 +61,16 @@
     flex-wrap: nowrap;
     margin-right: 7px;
     font-weight: bold;
+
+    color:#12002b;
   }
   
   .user-details input {
     width: 50%;
     padding: 5px;
     margin-bottom: 10px;
+
+    color: lightslategray;
 
   }
   
@@ -83,7 +87,7 @@
   .user_name_bloc span {
 
     font-weight: 500;
-    color:#007bff;
+    color:#28692b;
 
 
   }
@@ -107,18 +111,21 @@
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-    border: none;
-    border-radius: 5px;
+    /* border: none;
+    border-radius: 5px; */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   
-    background-color: #007bff;
+    border-color: #00bc77;
+    background-color: #00bc77;
     color: #fff;
+    font-weight: bold;
+    
   }
   
 
   .modify-button:hover {
-    background-color:#495057;
+    background-color:#12002b;
   }
   
   

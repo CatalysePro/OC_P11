@@ -1,12 +1,30 @@
-// Header.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import logo from '../pictures/logos/argentBankLogo.png'; 
 import '../style/Header.css';
 
 function Header({ isLoggedIn, handleSignOut }) {
-  const userName = useSelector(state => state.auth.username); //  username instaed of userName / useSelector for extracting from Redux store
+  const userName = useSelector(state => state.auth.username);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSignOutClick = (event) => {
+    event.preventDefault();
+    setShowPopup(true);
+  };
+
+  const handleConfirmSignOut = () => {
+    handleSignOut();
+    setShowPopup(false);
+    navigate('/');
+  };
+
+  const handleCancelSignOut = () => {
+    setShowPopup(false);
+  };
 
   return (
     <nav className="main-nav">
@@ -25,7 +43,7 @@ function Header({ isLoggedIn, handleSignOut }) {
             <a
               className="main-nav-item"
               href="/"
-              onClick={handleSignOut}
+              onClick={handleSignOutClick}
             > 
               <i className="fa fa-sign-out"></i>
               Sign Out
@@ -41,6 +59,19 @@ function Header({ isLoggedIn, handleSignOut }) {
           </NavLink>
         )}
       </div>
+      {showPopup && (
+        <div className="custom-popup-overlay"> 
+          <div className="custom-popup">
+            <div className="custom-popup-content">
+              <p>Do you want to log out ?</p>
+            </div>
+            <div className="custom-popup-buttons">
+              <button onClick={handleConfirmSignOut}>I wanna leave</button>
+              <button onClick={handleCancelSignOut}>I'm gonna stay</button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
