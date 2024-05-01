@@ -29,6 +29,7 @@
 .transactions-list tr:hover {
     background-color: #ddd;
 }
+<<<<<<< HEAD
 .transactions-list {
     width: 90%;
     margin-top: 20px;
@@ -117,3 +118,5 @@
 .transactions-list .icon-pencil:hover {
     color: #28692b; 
 }
+=======
+>>>>>>> 348bb622512af94611051289ce35f6a5482c2a42

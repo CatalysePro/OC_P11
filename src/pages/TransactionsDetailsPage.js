@@ -1,15 +1,25 @@
+<<<<<<< HEAD
 
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+=======
+import React from 'react';
+
+>>>>>>> 348bb622512af94611051289ce35f6a5482c2a42
 import Footer from '../components/Footer';
 import ResumeRecall from '../components/ResumeRecall';
 import AccountOwner from '../components/AccountOwner';
 import TransactionsList from '../components/TransactionsList';
+<<<<<<< HEAD
+=======
+import { useLocation } from 'react-router-dom';
+>>>>>>> 348bb622512af94611051289ce35f6a5482c2a42
 
 import '../style/TransactionsDetailsPage.css';
 
 
+<<<<<<< HEAD
 const TransactionsDetailsPage = () => {
     const location = useLocation();
     const { state } = location;
@@ -74,4 +84,34 @@ const TransactionsDetailsPage = () => {
     );
 };
 
+=======
+const TransactionsDetailsPage = ({ token }) => {
+    const location = useLocation();
+    const { state } = location;
+    const { title, accountNumber, amount, description } = state || {};
+    const { firstName, lastName } = state || {};
+
+    return (
+      <>
+        <button onClick={() => window.history.back()} className="back-button">Back to Accounts Overview</button>
+        <AccountOwner
+          firstName={firstName}
+          lastName={lastName}
+        />
+        <div className="transactions_bloc">
+          <ResumeRecall 
+            title={title} 
+            accountNumber={accountNumber}
+            amount={amount}
+            description={description}
+            token={token}  
+          />
+          <TransactionsList/>
+        </div>
+        <Footer />
+      </>
+    );
+};
+
+>>>>>>> 348bb622512af94611051289ce35f6a5482c2a42
 export default TransactionsDetailsPage;
