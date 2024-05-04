@@ -12,11 +12,37 @@ h2 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
+    margin-top: 0px;
     
   }
 
 .current_balance {
 
-  font-size: 20px;
+  font-weight: bold;
+}
+
+.amount {
+
+  margin-left: 2px;
+  color:#42b983;
+  font-size: 1.1em;
+}
+
+@media only screen and (max-width: 576px) and (orientation: portrait) {
+  .account-details p {
+
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+  .account-details p {
+
+    display: flex;
+    flex-direction: column;
+  }
 }
   

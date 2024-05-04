@@ -8,9 +8,11 @@
 
     text-align: left;
 
+    margin-top: 1rem;
+
     margin-left: 30px;
 
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     /* background-color: yellow; */
   }
@@ -22,6 +24,6 @@
 
   .first_name, .last_name {
 
-    color: #28692b; 
+    color: #00bc77;; 
   }
   

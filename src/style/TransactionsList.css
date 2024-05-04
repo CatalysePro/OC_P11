@@ -18,12 +18,12 @@
 }
 
 .transactions-list th {
-    background-color: #4CAF50;
-    color: #ddd;
+    background-color: #42b983;
+    color: #fff;
 }
 
 .transactions-list tr:nth-child(even) {
-    background-color: #c4ecc6;
+    background-color: #a3dfc4;
 }
 
 .transactions-list tr:hover {

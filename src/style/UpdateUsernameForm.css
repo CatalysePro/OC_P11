@@ -21,6 +21,8 @@
 .update_form input {
 
     width: 94%;
+    font-size: 16px;
+    
 }
 
 .update_form_btns_bloc {
@@ -41,29 +43,33 @@
     text-decoration: none;
     text-align: center;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
   
   .validate_btn {
-    background-color: rgb(120, 238, 120);
-    color: green;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
   }
   
   .cancel_btn {
     background-color: rgb(233, 168, 168);
+    border-color: rgb(233, 168, 168);
     color: rgb(255, 43, 43);
     
   }
   
   .validate_btn:hover {
-    background-color: green;
+    background-color: #28692b;
+    border-color: #28692b;
     color: #fff;
   }
   
   .cancel_btn:hover {
     background-color: red;
+    border-color: red;
     color: #fff;
   }
 
@@ -91,11 +97,12 @@
 
 .popup-content {
   margin-bottom: 10px;
+  color: red;
 }
 
 .popup-close {
-  background-color: #f44336;
-  color: #fff;
+  background-color: #f0938c;
+  color: #ddd;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -104,5 +111,6 @@
 }
 
 .popup-close:hover {
-  background-color: #d32f2f;
+  background-color: red;
+  color: #fff;
 }

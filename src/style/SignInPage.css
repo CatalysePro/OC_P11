@@ -6,12 +6,14 @@ html {
 
 .bg-dark {
 
-    height: 100%;
+    /* height: 100%; */
 
     padding-top: 20px !important;
-    padding-bottom: 100px !important;
+    padding-bottom: 140px !important;
 
+    /* height: 100 vh; */
 
+    flex: 1;
     background-color: #12002b;
 
     /*additionnal style*/
@@ -19,4 +21,9 @@ html {
     margin-bottom: 50px; */
 
 
+}
+
+main {
+    display: block;
+    unicode-bidi: isolate;
 }

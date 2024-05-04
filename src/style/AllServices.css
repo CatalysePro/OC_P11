@@ -28,6 +28,17 @@
     
     .features {
       flex-direction: row;
+      margin-top: 0px;
     }
 }
+
+@media only screen and (max-width: 576px) and (orientation: portrait) {
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        margin-top: -80px;
+    }
+    
+  }
   

@@ -87,7 +87,8 @@
   .user_name_bloc span {
 
     font-weight: 500;
-    color:#28692b;
+    color: #00bc77;;
+    font-weight: bold;
 
 
   }
@@ -126,6 +127,7 @@
 
   .modify-button:hover {
     background-color:#12002b;
+    border-color:#12002b;
   }
   
   

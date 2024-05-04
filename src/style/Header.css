@@ -59,6 +59,12 @@
 
 }
 
+.fa-user-circle {
+
+  width: 16px;
+  height: 16px;
+}
+
 .fa-sign-out {
 
   margin-left: 10px;
@@ -67,13 +73,14 @@
 .header_user_info_bloc {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .headerNameClass {
 
   font-size: 18px;
   font-weight: bold;
-  color: #28692b;
+  color: #00bc77;
 
 }
 
@@ -124,8 +131,6 @@
 
 .custom-popup-buttons button {
 
-  
-
   margin: 10px;
 
   padding: 5px 10px;
@@ -133,32 +138,60 @@
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: none;
-  border-radius: 5px;
+  /* border: 1px solid #12002b; */
+  border-radius: 0px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .custom-popup button:first-child {
-  background-color: #12002b;
-  color: gray;
+  background-color: #fff;
+  border-color: #fff;
+  color: #12002b;
 }
 
 .custom-popup button:last-child {
-  background-color: rgb(120, 238, 120);
-  color: green;
+  background-color: #00bc77;
+  border-color: #00bc77;
+  color: #fff;
 }
 
 .custom-popup button:first-child:hover {
 
   background-color: #12002b;
+  border-color: #12002b;
   color: #fff;
 
 }
 
 .custom-popup button:last-child:hover {
 
-  background-color: green;
+  background-color: #28692b;
+  border-color: #28692b;
   color: #fff;
 
+}
+
+@media only screen and (max-width: 576px) and (orientation: portrait) {
+  
+  .main-nav-item {
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  .custom-popup {
+
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+  .custom-popup {
+
+    width: 40%;
+  }
 }
