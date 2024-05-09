@@ -9,7 +9,7 @@ import TransactionsList from '../components/TransactionsList';
 
 import '../style/TransactionsDetailsPage.css';
 
-
+// same approach as user page
 const TransactionsDetailsPage = () => {
     const location = useLocation();
     const { state } = location;
@@ -22,7 +22,8 @@ const TransactionsDetailsPage = () => {
     const token = useSelector(state => state.auth.token);
 
     console.log(token ==='')
-  
+
+    // Transactions page protection (same as User page)
     useEffect (()=>{
   
       if (token === undefined || token === '') { // check token avaibility ---> Sign In

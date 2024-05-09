@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // import hook useEffect for conditional function activation
 import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux'; // Import useSelector 
+import { useSelector } from 'react-redux'; // Import hook useSelector for value retrievement
 import UserWelcome from '../components/UserWelcome';
 import CurrentAccResume from '../components/CurrentAccResume';
 import SavingAccResume from '../components/SavingAccResume';
@@ -14,21 +14,20 @@ function UserPage() {
   const { state } = location;
   const navigate = useNavigate();
   
-  //  useSelector for  firstName & lastName from Redux store
-  // const firstName = useSelector(state => state.auth.firstName);
-  // const lastName = useSelector(state => state.auth.lastName);
+  //  useSelector for token (or other data value) from Redux store
   const token = useSelector(state => state.auth.token);
 
   console.log(token ==='')
 
+  // User page protection (same as transactions page)
   useEffect (()=>{
 
-    if (token === undefined || token === '') { // check token avaibility ---> Sign In
+    if (token === undefined || token === '') { // check token avaibility if not ---> Sign In
     console.log('here I am !!!')
     navigate ('/Sign-in', {replace:true})
   }
   else {
-
+    // js fetch request in cas of token avaibility
     fetch('http://localhost:3001/api/v1/user/profile', {
           method: 'POST',
           headers: {
@@ -39,9 +38,10 @@ function UserPage() {
           body: JSON.stringify({ includeUserName: true })
         }).then((rep)=>{
 
-          if (rep.status !==200){ // check token viability ---> Sign In
+          if (rep.status !==200){ // check token viability if not ---> Sign In
             console.log('me again !!!')
-            navigate ('/Sign-in', {replace:true})
+            navigate ('/Sign-in', {replace:true}) // {replace:true} previous page not kept in navigation history
+                                                  // no way to go back to user page 
           }
         })
 
@@ -59,7 +59,7 @@ function UserPage() {
 
   const openModal = () => {
     setIsModalOpen(true);
-    console.log('Modal opened with token (UserPage):', token); // check if token is present when modal is called - Do not work
+    console.log('Modal opened with token (UserPage):', token); // check if token is present when modal is called 
   };
 
   const closeModal = () => {
@@ -98,7 +98,7 @@ function UserPage() {
         <EditUsernameModal
           firstName={firstName}
           lastName={lastName}
-          userName={userName} // Pass userName to EditUsernameModal
+          userName={userName} // Pass current userName to EditUsernameModal
           onClose={closeModal} // Pass fonction modal closing
           token={token}
         />

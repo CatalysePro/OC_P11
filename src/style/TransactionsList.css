@@ -12,9 +12,27 @@
 
 .transactions-list th,
 .transactions-list td {
+    
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+}
+
+.purpose_value_col {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.purpose_value_col p {
+
+    margin-left: 5px;
+    color:#42b983;
+    font-size: 1.05rem;
+
+    cursor: pointer;
+    
 }
 
 .transactions-list th {

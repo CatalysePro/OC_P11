@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react'; // useState hook for local automatic update
+import { NavLink } from 'react-router-dom'; // component for customizable navigation
+import { useNavigate } from 'react-router-dom'; // hook for programmatic navigation
+import { useSelector } from 'react-redux'; // hook for automatic global update
 import logo from '../pictures/logos/argentBankLogo.png'; 
 import '../style/Header.css';
 
 function Header({ isLoggedIn, handleSignOut }) {
-  const userName = useSelector(state => state.auth.username);
+  const userName = useSelector(state => state.auth.username); // username property from substate auth of the global state
   const [showPopup, setShowPopup] = useState(false);
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handleSignOutClick = (event) => {
     event.preventDefault();

@@ -6,7 +6,7 @@ import UpdateUsernameForm from './UpdateUsernameForm'; // child import
 const EditUsernameModal = ({ firstName, lastName, userName, token, onClose}) => {
   console.log ('token value in EditUsernameModal 1:', token)
   const [isEditMode, setIsEditMode] = useState(false);
-  const userNameRedux = useSelector(state => state.auth.username); // useSelector for username extract from Redux store
+  const userNameRedux = useSelector(state => state.auth.username); // useSelector for updated username extract from Redux store
 
   const handleModify = () => {
     setIsEditMode(true);
@@ -30,14 +30,14 @@ const EditUsernameModal = ({ firstName, lastName, userName, token, onClose}) => 
           <div className="id-data-group user_name_bloc"><label>User Name:</label>
             {isEditMode ? (
               <UpdateUsernameForm
-              userName={userNameRedux} // extract value from Redux store
+              userName={userNameRedux} // display updated value from Redux store
               onSuccess={handleClose}
               currentUsername={userName}
               onCancel={handleClose}
               token={token}
               />
             ) : (
-              <span>{userNameRedux}</span> // extract value from Redux store
+              <span>{userNameRedux}</span> // display updated value from Redux store
             )}
             {!isEditMode && (
             <button className="modify-button" onClick={handleModify}>Modify</button>

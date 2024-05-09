@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux'; // Import useDispatch from react-redux
+import { useDispatch } from 'react-redux'; // Import hook useDispatch for actions propagation
 
-import axios from 'axios';
+import axios from 'axios'; // import axios for optimized http request
 import '../style/SignIn.css';
 
 const SignIn = ({ onSignIn }) => {
@@ -19,6 +19,7 @@ const SignIn = ({ onSignIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
+    // axios request for connexion 
     try {
       console.log("Submitting form...");
       const response = await axios.post('http://localhost:3001/api/v1/user/login', {
@@ -32,6 +33,7 @@ const SignIn = ({ onSignIn }) => {
 
       console.log(token)
   
+      // username js fetch function
       const userNameResponse = await fetch('http://localhost:3001/api/v1/user/profile', {
         method: 'POST',
         headers: {
@@ -51,9 +53,7 @@ const SignIn = ({ onSignIn }) => {
   
       console.log("User name:", userName);
 
-      // Dispatch  LOGIN_SUCCESS action with retrievd User name and token
-      // dispatch({ type: 'LOGIN_SUCCESS', payload: { username: userName} });
-
+      
       // Dispatch  LOGIN_SUCCESS action with retrieved User name and token
       dispatch({ type: 'LOGIN_SUCCESS', payload: { username: userName, token: token } });
       console.log('Token stored in Redux store:', token);
@@ -73,12 +73,6 @@ const SignIn = ({ onSignIn }) => {
       navigate('/User', {
         state: { firstName, lastName, userName, token }
       });
-
-      // navigate('/transactions', {
-      //   state: { firstName, lastName, userName, token }
-      // }); DOES NOT WORK
-
-      
   
       setEmail('');
       setPassword('');
@@ -88,8 +82,6 @@ const SignIn = ({ onSignIn }) => {
     }
   };
   
-  
-
   return (
     <section className="sign-in-content">
       <i className="fa fa-user-circle sign-in-icon"></i>

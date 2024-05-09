@@ -36,7 +36,7 @@ const UserWelcome = ({ token }) => { // add token as prop
           lastName={lastName}
           userName={userName}
           onClose={closeModal}
-          token={token} // Pass token to EditUsernameModal
+          token={token} // Pass token too to EditUsernameModal
         />
       )}
     </div>

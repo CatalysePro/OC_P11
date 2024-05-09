@@ -32,7 +32,7 @@ const TransactionsList = ({ title }) => {
                     {transactionsData.map((transaction, index) => (
                         <tr key={index}>
                             <td>{transaction.date}</td>
-                            <td className="purpose_value_col">{transaction.purpose}<p className="icon-arrow-down">&#x2BC6;</p></td>
+                            <td>{transaction.purpose}<p className="icon-arrow-down">&#x2BC6;</p></td>
                             <td>{transaction.credit}</td>
                             <td>{transaction.debit}</td>
                         </tr>
